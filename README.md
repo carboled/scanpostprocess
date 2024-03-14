@@ -1,27 +1,33 @@
 # Clone
 via ssh:
 ```
-git clone git@github.com:carboled/scanposprocess.git
+git clone git@github.com:carboled/scanpostprocess.git
 ```
 or via https:
 ```
-git clone https://github.com/carboled/scanposprocess.git
+git clone https://github.com/carboled/scanpostprocess.git
 ```
 
 # Make environment
 
 - move to folder
 ```
-cd scanposprocess
+cd scanpostprocess
 ```
 - make a new environment
 ```
 python -m venv myenv
 ```
-- activate environmemt
+- UNIX: activate environmemt
 ```
 source myenv/bin/activate
 ```
+
+- WINDOWS: activate environmemt
+```
+source myenv/Scripts/activate
+```
+
 - Install requirements
 ```
 pip install -r requirements.txt
