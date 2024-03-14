@@ -1,8 +1,8 @@
 # Clone
 via ssh:
-`
+```
 git clone git@github.com:carboled/scanposprocess.git
-`
+```
 or via https
 `
 git clone https://github.com/carboled/scanposprocess.git
