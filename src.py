@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import xarray as xr
 import os
+import sys
 from mpl_toolkits.mplot3d import Axes3D 
 from matplotlib import cm
 import time
@@ -49,6 +50,20 @@ def read_xyz(path_to_scan, cellsize=0.01):
 
 
 def plot_surface_coordinates( Xg, Yg, Zg, name="terrain_coordinates.png"):
+    """
+    Make a surface plot using meshgrid.
+    
+    Parameters
+    ----------
+    Xg:  
+    Yg:
+    Zg:
+    name:
+
+    Returns
+    --------
+    None
+    """
     path_plots = Path("plots")
     path_plots.mkdir(exist_ok=True)
     fig = plt.figure(figsize=(20,20))
@@ -63,6 +78,18 @@ def plot_surface_coordinates( Xg, Yg, Zg, name="terrain_coordinates.png"):
 
  
 def plot_surface_dataarray(D, name="terrain_dataarray.png"):
+    """
+    Make a surface plot using dataarray.
+    
+    Parameters
+    ----------
+    D:
+    name:
+
+    Returns
+    --------
+    None
+    """ 
     path_plots = Path("plots")
     path_plots.mkdir(exist_ok=True)
     D.plot.surface()
@@ -71,6 +98,18 @@ def plot_surface_dataarray(D, name="terrain_dataarray.png"):
 
 
 def plot_profiles(D, name="profile.png"):
+    """
+    Make a profiles plot using dataarray.
+    
+    Parameters
+    ----------
+    D:  
+    name:
+
+    Returns
+    --------
+    None
+    """
     path_plots = Path("plots")
     path_plots.mkdir(exist_ok=True)
     fig = plt.figure(figsize=(20,20))
@@ -84,11 +123,9 @@ def plot_profiles(D, name="profile.png"):
     plt.close()
 
 if __name__ == "__main__":
-    print("hi")
     start = time.time()
     cellsize = 0.01
-    # path_to_scan = Path(r"E:/new_home/Engineering projects/Saba2/Scans/D01_E1L_Scan-01 - Cloud_al.xyz")
-    path_to_scan = "E:/new_home/Engineering projects/Saba2/Scans/D01_E1L_Scan-01 - Cloud_al.xyz"
+    path_to_scan = sys.argv[1]
     D, Xg, Yg, Zg = read_xyz(path_to_scan, cellsize=0.01)
     plot_surface_coordinates( Xg, Yg, Zg)
     plot_surface_dataarray(D)

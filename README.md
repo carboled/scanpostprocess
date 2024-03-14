@@ -32,3 +32,9 @@ source myenv/Scripts/activate
 ```
 pip install -r requirements.txt
 ```
+
+# Usage
+
+```
+python src.py /path/to/xyz/scan
+```
